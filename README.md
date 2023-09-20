@@ -2,26 +2,38 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
-## Development server
+## How to set up the Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Prerequisites
 
-## Code scaffolding
+Before you begin, ensure you have met the following requirements:
+Node.js: Ensure you have Node.js installed. You can download it from nodejs.org.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Setup
 
-## Build
+1. Clone the Repository: Begin by cloning the project repository to your local machine using the following command:
+   git clone https://github.com/trett1004/user_story.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Navigate to the Project Directory: Change your current directory to the project folder using the following command:
+   cd user-story
 
-## Running unit tests
+3. Install Dependencies: Use npm to install the project dependencies defined in package.json using the following command:
+   npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Run the Development Server: Start the development server to run the application locally using the following command:
+   ng serve
+   This command will compile and serve your Angular application. By default, you can access it at http://localhost:4200/ in your web browser.
 
-## Running end-to-end tests
+## How the app works / Usage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- upon start data are fetched from the api automatically
+- there are options for adding and deleting a user, filter and sort the table
 
-## Further help
+## Techstack
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Angular
+- Bootstrap
+
+## Miscellaneous
+
+- App is not responsive for mobile
