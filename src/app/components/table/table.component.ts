@@ -7,9 +7,29 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class TableComponent {
   @Input() tableData: any = [];
+  @Input() filter: string = '';
   @Output() dataToDelete = new EventEmitter<{ deletionData: any }>();
   dataForDeletion: any = [];
   areAnyCheckboxesSelected = false;
+  currentData: any = []; // Create a separate property for filtered data
+
+  // filter the data
+  // ngOnChanges() {
+  //   this.tableData = this.tableData.filter((element: any) => {
+  //     // console.log('element', element);
+  //     console.log('this.filter@tabel.ts', this.filter);
+  //     return element.name.toLowerCase().includes(this.filter.toLowerCase());
+  //   });
+  // }
+
+  ngOnChanges() {
+    // When filter or tableData changes, update currentData with filtered data
+    this.currentData = this.tableData.filter((element: any) => {
+      return element.name.toLowerCase().includes(this.filter.toLowerCase());
+    });
+    console.log('this.filter', this.filter);
+    console.log('this.currentData', this.currentData);
+  }
 
   /////////////// Delete User /////////////////////
   // filter the dataset (array of user/s) that shall be deleted

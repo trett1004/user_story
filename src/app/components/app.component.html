@@ -17,9 +17,13 @@
     (addEntry)="onEntryAdd($event)"
     *ngIf="showAddUserComponent"
   ></app-add-user>
+  <app-search-user
+    (searchTermCreated)="onSearchTermCreated($event)"
+  ></app-search-user>
   <ng-container *ngIf="apiData && apiData.length > 0">
     <app-table
       [tableData]="apiData"
+      [filter]="filter"
       (dataToDelete)="deleteData($event)"
     ></app-table>
   </ng-container>

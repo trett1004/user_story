@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'user_story';
   apiData: any = [];
   showAddUserComponent: boolean = false;
+  filter: string = '';
 
   constructor(private dataService: DataService) {}
   ///////////////////////   Delete User   ///////////////////////
@@ -46,6 +47,13 @@ export class AppComponent {
       ...this.apiData.sort((a: any, b: any) => a.name.localeCompare(b.name)),
     ];
     console.log('this.apiData', this.apiData);
+  }
+
+  ///////////////////////   Filter Table   ///////////////////////
+  onSearchTermCreated(name: string) {
+    // console.log('before', this.filter);
+    this.filter = name;
+    console.log('this.filter@app-root.ts', this.filter);
   }
 
   ///////////////////////   Fetch data from api   ///////////////////////

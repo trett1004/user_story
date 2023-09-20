@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
 import { TableComponent } from './table/table.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { SearchUserComponent } from './search-user/search-user.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, TableComponent, AddUserComponent],
+  declarations: [AppComponent, ButtonComponent, TableComponent, AddUserComponent, SearchUserComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
