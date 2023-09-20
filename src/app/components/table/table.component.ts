@@ -7,10 +7,20 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class TableComponent {
   @Input() tableData: any = [];
-  currentData: any = [];
+  @Output() dataToDelete = new EventEmitter<{ deletionData: any }>();
+  dataForDeletion: any = [];
+  areAnyCheckboxesSelected = false;
 
-  ngOnInit() {
-    this.currentData = this.tableData;
-    console.log('currentData', this.currentData);
+  /////////////// Delete User /////////////////////
+  // filter the dataset (array of user/s) that shall be deleted
+  onClickDeleteSelected() {
+    this.dataForDeletion = this.tableData.filter((row: any) => row.isSelected);
+    this.dataToDelete.emit(this.dataForDeletion);
+  }
+
+  // enable the delete button if at least one checkbox is selected
+  onCheckboxChange() {
+    const checkBoxSelected = this.tableData.some((row: any) => row.isSelected);
+    this.areAnyCheckboxesSelected = checkBoxSelected;
   }
 }

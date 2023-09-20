@@ -1,4 +1,7 @@
 <h1>{{ title }}</h1>
 <ng-container *ngIf="apiData && apiData.length > 0">
-  <app-table [tableData]="apiData"></app-table>
+  <app-table
+    [tableData]="apiData"
+    (dataToDelete)="deleteData($event)"
+  ></app-table>
 </ng-container>

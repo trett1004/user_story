@@ -11,6 +11,17 @@ export class AppComponent {
   apiData: any = [];
 
   constructor(private dataService: DataService) {}
+  ///////////////////////   Delete User   ///////////////////////
+  deleteData(deletionData: any) {
+    console.log('deletionData', deletionData);
+    this.apiData = this.apiData.filter((element: any) => {
+      const found = deletionData.find(
+        (elForDeletion: any) => element.id === elForDeletion.id
+      );
+      return found ? false : true;
+    });
+    console.info({ apiData: this.apiData });
+  }
 
   ///////////////////////   Fetch data from api   ///////////////////////
   ngOnInit() {

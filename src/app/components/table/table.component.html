@@ -4,7 +4,12 @@
       <thead>
         <tr>
           <th>
-            <app-button [buttonText]="'Delete'" [className]="'btn btn-danger'">
+            <app-button
+              [buttonText]="'Delete'"
+              [className]="'btn btn-danger'"
+              [disabled]="!areAnyCheckboxesSelected"
+              (buttonClick)="onClickDeleteSelected()"
+            >
               ></app-button
             >
           </th>
@@ -15,9 +20,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let row of currentData">
+        <tr *ngFor="let row of tableData">
           <td class="column1">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              [(ngModel)]="row.isSelected"
+              (change)="onCheckboxChange()"
+            />
           </td>
           <td>{{ row.name }}</td>
           <td>{{ row.username }}</td>
