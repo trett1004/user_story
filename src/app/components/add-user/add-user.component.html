@@ -7,7 +7,7 @@
     >
       <div class="row">
         <div class="col-sm-5">
-          <label for="">Credentials:</label>
+          <label for="">Identification:</label>
           <input
             placeholder="name... "
             type="text"
@@ -22,6 +22,7 @@
             name="username"
             class="form-control"
           />
+          <label for="">Contact:</label>
           <input
             placeholder="email... "
             type="text"
@@ -29,7 +30,21 @@
             name="email"
             class="form-control"
           />
-          <label for="">Adress:</label>
+          <input
+            placeholder="phone... "
+            type="text"
+            [(ngModel)]="formData.phone"
+            name="phone"
+            class="form-control"
+          />
+          <input
+            placeholder="website... "
+            type="text"
+            [(ngModel)]="formData.website"
+            name="website"
+            class="form-control"
+          />
+          <label for="">Address:</label>
           <input
             placeholder="street... "
             type="text"
@@ -73,21 +88,6 @@
             type="text"
             [(ngModel)]="formData.address.geo.lng"
             name="lng"
-            class="form-control"
-          />
-          <label for="">Other:</label>
-          <input
-            placeholder="phone... "
-            type="text"
-            [(ngModel)]="formData.phone"
-            name="phone"
-            class="form-control"
-          />
-          <input
-            placeholder="website... "
-            type="text"
-            [(ngModel)]="formData.website"
-            name="website"
             class="form-control"
           />
           <label for="">Company:</label>
