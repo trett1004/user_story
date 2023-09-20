@@ -19,7 +19,7 @@ export class AppComponent {
 
   private accessDataservice() {
     this.dataService.fetchData().subscribe((data: any) => {
-      console.log(data);
+      console.log('data', data);
       this.apiData = data;
     });
   }

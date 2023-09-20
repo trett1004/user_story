@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>
+            <app-button [buttonText]="'Delete'" [className]="'btn btn-danger'">
+              ></app-button
+            >
+          </th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of currentData">
+          <td class="column1">
+            <input type="checkbox" />
+          </td>
+          <td>{{ row.name }}</td>
+          <td>{{ row.username }}</td>
+          <td>{{ row.email }}</td>
+          <td>{{ row.website }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
