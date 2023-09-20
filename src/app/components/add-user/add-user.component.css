@@ -1,0 +1,18 @@
+label {
+  margin-top: 0.5em;
+}
+
+input {
+  margin-bottom: 0.2em;
+}
+
+.form {
+  margin-top: 2em;
+}
+
+.custom-row {
+  display: flex;
+  flex-direction: column; /* Change the direction of flex items */
+  justify-content: center; /* Adjust horizontal alignment */
+  align-items: flex-start; /* Adjust vertical alignment */
+}

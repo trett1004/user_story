@@ -9,6 +9,7 @@ import { DataService } from '../services/data-service.service';
 export class AppComponent {
   title = 'user_story';
   apiData: any = [];
+  showAddUserComponent: boolean = false;
 
   constructor(private dataService: DataService) {}
   ///////////////////////   Delete User   ///////////////////////
@@ -21,6 +22,22 @@ export class AppComponent {
       return found ? false : true;
     });
     console.info({ apiData: this.apiData });
+  }
+
+  ///////////////////////   Add User   ///////////////////////
+  onClickToggleUserForm() {
+    // show the input form
+    this.showAddUserComponent = !this.showAddUserComponent;
+  }
+
+  onEntryAdd(formData: { userData: any }) {
+    // add an id according to the length of the user array
+    formData.userData.id = this.apiData.length + 1;
+    // add the formdata to the user array
+    console.log([...this.apiData]);
+    this.apiData = [...this.apiData, formData.userData];
+    // hide the input form
+    this.showAddUserComponent = !this.showAddUserComponent;
   }
 
   ///////////////////////   Fetch data from api   ///////////////////////

@@ -1,7 +1,21 @@
-<h1>{{ title }}</h1>
-<ng-container *ngIf="apiData && apiData.length > 0">
-  <app-table
-    [tableData]="apiData"
-    (dataToDelete)="deleteData($event)"
-  ></app-table>
-</ng-container>
+<div class="container">
+  <h1>{{ title }}</h1>
+  <div class="col-sm-12">
+    <app-button
+      [buttonText]="'Add a User'"
+      [className]="'btn btn-primary'"
+      (click)="onClickToggleUserForm()"
+    ></app-button>
+  </div>
+
+  <app-add-user
+    (addEntry)="onEntryAdd($event)"
+    *ngIf="showAddUserComponent"
+  ></app-add-user>
+  <ng-container *ngIf="apiData && apiData.length > 0">
+    <app-table
+      [tableData]="apiData"
+      (dataToDelete)="deleteData($event)"
+    ></app-table>
+  </ng-container>
+</div>

@@ -1,0 +1,126 @@
+<div class="row">
+  <div class="col-sm-8">
+    <form
+      (ngSubmit)="onFormSubmit()"
+      #myForm="ngForm"
+      class="form form-control"
+    >
+      <div class="row">
+        <div class="col-sm-5">
+          <label for="">Credentials:</label>
+          <input
+            placeholder="name... "
+            type="text"
+            [(ngModel)]="formData.name"
+            name="name"
+            class="form-control"
+          />
+          <input
+            placeholder="username... "
+            type="text"
+            [(ngModel)]="formData.username"
+            name="username"
+            class="form-control"
+          />
+          <input
+            placeholder="email... "
+            type="text"
+            [(ngModel)]="formData.email"
+            name="email"
+            class="form-control"
+          />
+          <label for="">Adress:</label>
+          <input
+            placeholder="street... "
+            type="text"
+            [(ngModel)]="formData.address.street"
+            name="street"
+            class="form-control"
+          />
+          <input
+            placeholder="suite... "
+            type="text"
+            [(ngModel)]="formData.address.suite"
+            name="suite"
+            class="form-control"
+          />
+          <input
+            placeholder="city... "
+            type="text"
+            [(ngModel)]="formData.address.city"
+            name="city"
+            class="form-control"
+          />
+          <input
+            placeholder="zipcode... "
+            type="text"
+            [(ngModel)]="formData.address.zipcode"
+            name="zipcode"
+            class="form-control"
+          />
+        </div>
+        <div class="col-sm-5">
+          <label for="">Geo Data:</label>
+          <input
+            placeholder="latitude... "
+            type="text"
+            [(ngModel)]="formData.address.geo.lat"
+            name="lat"
+            class="form-control"
+          />
+          <input
+            placeholder="longitude..."
+            type="text"
+            [(ngModel)]="formData.address.geo.lng"
+            name="lng"
+            class="form-control"
+          />
+          <label for="">Other:</label>
+          <input
+            placeholder="phone... "
+            type="text"
+            [(ngModel)]="formData.phone"
+            name="phone"
+            class="form-control"
+          />
+          <input
+            placeholder="website... "
+            type="text"
+            [(ngModel)]="formData.website"
+            name="website"
+            class="form-control"
+          />
+          <label for="">Company:</label>
+          <input
+            placeholder="company name... "
+            type="text"
+            [(ngModel)]="formData.company.name"
+            name="company name"
+            class="form-control"
+          />
+          <input
+            placeholder="catchPhrase... "
+            type="text"
+            [(ngModel)]="formData.company.catchPhrase"
+            name="catchPhrase"
+            class="form-control"
+          />
+          <input
+            placeholder="bs... "
+            type="text"
+            [(ngModel)]="formData.company.bs"
+            name="bs"
+            class="form-control"
+          />
+        </div>
+
+        <div class="col-sm-3"></div>
+        <app-button
+          [buttonText]="'Add User'"
+          [className]="'btn btn-success'"
+          type="submit"
+        ></app-button>
+      </div>
+    </form>
+  </div>
+</div>
