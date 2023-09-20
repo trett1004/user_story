@@ -40,6 +40,14 @@ export class AppComponent {
     this.showAddUserComponent = !this.showAddUserComponent;
   }
 
+  ///////////////////////   Sort Table   ///////////////////////
+  onClickSortTable() {
+    this.apiData = [
+      ...this.apiData.sort((a: any, b: any) => a.name.localeCompare(b.name)),
+    ];
+    console.log('this.apiData', this.apiData);
+  }
+
   ///////////////////////   Fetch data from api   ///////////////////////
   ngOnInit() {
     this.accessDataservice();

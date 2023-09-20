@@ -2,6 +2,11 @@
   <h1>{{ title }}</h1>
   <div class="col-sm-12">
     <app-button
+      [buttonText]="'Sort Users'"
+      [className]="'btn btn-primary'"
+      (click)="onClickSortTable()"
+    ></app-button>
+    <app-button
       [buttonText]="'Add a User'"
       [className]="'btn btn-primary'"
       (click)="onClickToggleUserForm()"
